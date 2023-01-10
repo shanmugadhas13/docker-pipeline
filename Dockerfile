@@ -1,7 +1,7 @@
 FROM node:lts-alpine3.15
 RUN mkdir -p /home/app
 COPY code/ /home/app
-EXPOSE 80
+EXPOSE 3000
 WORKDIR /home/app
 RUN npm update
 RUN npm install -g npm@8.19.2
