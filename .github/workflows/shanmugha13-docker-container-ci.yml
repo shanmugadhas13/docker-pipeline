@@ -8,9 +8,7 @@ env:
 jobs:
   Job_1:
     name: Agent job 1
-    runs-on:
-      - self-hosted
-      - ubuntu-22.04
+    runs-on: Ubuntu-latest
     steps:
     - name: checkout
       uses: actions/checkout@v3.3.0
