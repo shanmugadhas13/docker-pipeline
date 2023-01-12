@@ -1,0 +1,20 @@
+name: shanmugha13/shanmugha13-Docker-container-CI
+on:
+  push:
+    branches:
+    - main
+env:
+  system_debug: 'false'
+jobs:
+  Job_1:
+    name: Agent job 1
+    runs-on:
+      - self-hosted
+      - ubuntu-22.04
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3.3.0
+    - name: Build an image
+      run: docker build . --file "Dockerfile" --tag shanmugha13/docker-pipeline:${{ github.run_id }} -t shanmugha13/docker-pipeline:latest
+    - name: Push an image
+      run: docker push shanmugha13/docker-pipeline:${{ github.run_id }}
